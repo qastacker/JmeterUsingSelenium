@@ -12,15 +12,20 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class technoCart {
+public class technoCartHL {
 
 	@Test
 	public void addtocart() throws InterruptedException {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Adol-sys-410\\Downloads\\ujars\\chromedriver.exe");
-		WebDriver driver=new ChromeDriver();
+		
+		  ChromeOptions options=new ChromeOptions();
+		  options.addArguments("window-size=1400,800");
+		  options.addArguments("--headless"); 
+		  ChromeDriver driver=new ChromeDriver(options);
 		 
+		//WebDriver driver= new ChromeDriver(new ChromeOptions().setHeadless(true));
 		driver.get("https://www.technocart.adoltech.com/");
 		driver.manage().window().maximize();
 		
