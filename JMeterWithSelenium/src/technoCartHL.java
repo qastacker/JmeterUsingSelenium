@@ -15,15 +15,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class technoCartHL {
 
 	@Test
-	public void addtocart() throws InterruptedException {
+	public void addtocartHL() throws InterruptedException {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Adol-sys-410\\Downloads\\ujars\\chromedriver.exe");
 		
-		  ChromeOptions options=new ChromeOptions();
-		  options.addArguments("window-size=1400,800");
-		  options.addArguments("--headless"); 
-		  ChromeDriver driver=new ChromeDriver(options);
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("window-size=1400,800");
+		options.addArguments("--headless"); 
+		ChromeDriver driver=new ChromeDriver(options);
 		 
 		//WebDriver driver= new ChromeDriver(new ChromeOptions().setHeadless(true));
 		driver.get("https://www.technocart.adoltech.com/");
@@ -57,24 +57,24 @@ public class technoCartHL {
 		WebElement buy_now = driver.findElement(By.id("product-addtocart-button"));
 		//WebElement buy_now = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("product-addtocart-button")));
 		 
-		 js.executeScript("window.scrollBy(0,200)", buy_now);
+		js.executeScript("window.scrollBy(0,200)", buy_now);
 		 
-		 Thread.sleep(2000);
+		Thread.sleep(2000);
 		 
-		 for(int i=1;i<=5;i++) { qty_up.click(); }
+		for(int i=1;i<=5;i++) { qty_up.click(); }
 		 
-		 Thread.sleep(1000);
+		Thread.sleep(1000);
 		 
-		 buy_now.click();
-		 WebElement view_cart=driver.findElement(By.xpath("//a[@class='button btn-viewcart']"));
+		buy_now.click();
+		WebElement view_cart=driver.findElement(By.xpath("//a[@class='button btn-viewcart']"));
 		  
-		 Thread.sleep(1000);
-		 view_cart.click();
+		Thread.sleep(1000);
+		view_cart.click();
 		 
-		 WebElement subTotal=driver.findElement(By.xpath("//td[@class='col subtotal']/span/span/span"));
-		 WebElement Total=driver.findElement(By.xpath("//tr[@class='grand totals']//td[@class='amount']/strong/span"));
-		 System.out.println(subTotal.getText());
-		 System.out.println(Total.getText());
+		WebElement subTotal=driver.findElement(By.xpath("//td[@class='col subtotal']/span/span/span"));
+		WebElement Total=driver.findElement(By.xpath("//tr[@class='grand totals']//td[@class='amount']/strong/span"));
+		System.out.println(subTotal.getText());
+		System.out.println(Total.getText());
 	}
 }
 		 
