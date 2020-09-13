@@ -21,11 +21,34 @@ public class technoCart {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Adol-sys-410\\Downloads\\ujars\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		 
-		driver.get("https://www.technocart.adoltech.com/");
+		//driver.get("https://staging-technocart.adoltech.com/");
+		driver.get("https://technocart.com/");
 		driver.manage().window().maximize();
 		
-		//Thread.sleep(1000);
+		/* to close popup window */
+		/*
+		 * Thread.sleep(3000);
+		 * 
+		 * WebElement
+		 * popup=driver.findElement(By.xpath("//div[@id='newsletter_pop_up']"));
+		 * if(popup.isDisplayed()) {
+		 * popup.findElement(By.xpath("//a[@class='btn-close newletter_popup_close']")).
+		 * click(); }
+		 * 
+		 * Thread.sleep(1000);
+		 */
 		
+		  Thread.sleep(3000);
+		  
+		  WebElement
+		  popup=driver.findElement(By.id("bio_ep"));
+		  if(popup.isDisplayed()) {
+		  popup.findElement(By.id("bio_ep_close")).
+		  click(); }
+		  
+		  Thread.sleep(1000);
+		 
+			
 		Actions actions = new Actions(driver);
 		WebElement covid19 = driver.findElement(By.xpath("//span[contains(text(),'Covid19')]"));
 		actions.moveToElement(covid19);
@@ -67,9 +90,9 @@ public class technoCart {
 		 view_cart.click();
 		 
 		 WebElement subTotal=driver.findElement(By.xpath("//td[@class='col subtotal']/span/span/span"));
-		 WebElement Total=driver.findElement(By.xpath("//tr[@class='grand totals']//td[@class='amount']/strong/span"));
+		 //WebElement Total=driver.findElement(By.xpath("//tr[@class='grand totals']//td[@class='amount']/strong/span"));
 		 System.out.println(subTotal.getText());
-		 System.out.println(Total.getText());
+		 //System.out.println(Total.getText());
 	}
 }
 		 
